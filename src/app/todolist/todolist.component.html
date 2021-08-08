@@ -1,0 +1,87 @@
+<div class="container-lg"> 
+    
+    <div class="button">
+        <button class="btn btn-primary" style = "background-color:lightseagreen;" 
+        [disabled] ="task == '' " (click) ="addTask()" >Add Task</button> 
+        <br> 
+        <br>
+    </div>
+    
+    <div class="container-sm">
+        <div class="row">
+            <div class="col-md-12">
+                
+                <label for = "task"> Task </label>
+                
+                <input type="text" class="form-control" id = "task" value="" [(ngModel)] = "task">
+                <hr>
+            </div>
+        </div>
+    
+        
+        
+    <div *ngFor="let x of tasks; let index = index;"  >
+        <div class="card">
+            <div class="card-body">
+             
+    <input type="checkbox" class="form-check-input" style="margin-left: 10px;"
+     id="Check" (click)="taskCompleted(index)">
+
+    <label style="margin-left: 10px;">  {{x}} </label>
+
+    <input type="radio" class="form-check-input" style="margin-left: 10px;">
+    
+    <button class="btn btn-primary" style="margin-left: 5px;" 
+    (click) = "deleteTask(index)" > Delete </button>
+
+    </div>
+</div>
+    </div>
+    <!-- <div class="details" >
+        <table class="table">
+          
+            <thead>
+                <tr style="padding: 10px;">
+                    <th> Sno.</th>
+                    <th> Completed </th>
+                    <th>Task</th>
+                    <th> Fav </th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr  *ngFor="let x of tasks; let index = index;" >
+                     <td>{{index + 1}}</td> 
+                    <td><input type="checkbox" class="form-check-input" id="Check" 
+                        onclick="taskCompleted()"></td>
+                    <td>{{x}} </td>
+                    <td> <input type="radio" class="form-check-input"></td>
+                    
+                    <td>
+                        <button class="btn btn-sm btn-danger" style= "background-color:burlywood;" (click) = "deleteTask(index)">
+                          <i class="fa fa-remove"></i>Delete</button>
+                      </td>                      
+                </tr>
+            </tbody>
+        </table>
+        
+    </div> 
+     -->
+<hr>
+    <div class ="container">
+        
+     <h3> Tasks Are Completed</h3>
+    <div *ngFor="let x of completedTask; let index = index;" >
+        
+    <label>  {{x}} </label>
+    <!-- <button class="btn btn-primary" (click) = "deleteTask(index)"> Delete </button> -->
+    </div>
+    </div>
+</div>
+
+<div class = "example-box">
+<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+    <!-- <div class="example-box" *ngFor="let task of tasks" cdkDrag>{{tasks}}</div>
+     -->
+    </div>
+  </div>
