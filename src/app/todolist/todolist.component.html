@@ -8,7 +8,7 @@
     </div>
     
     <div class="container-sm">
-        <div class="row">
+        <div>
             <div class="col-md-12">
                 
                 <label for = "task"> Task </label>
@@ -19,25 +19,34 @@
         </div>
     
         
-        
+        <div class="column">
+            <div class="wrapper">
+              <div class="container" dragula="DRAGULA_FACTS">
     <div *ngFor="let x of tasks; let index = index;"  >
         <div class="card">
             <div class="card-body">
              
-    <input type="checkbox" class="form-check-input" style="margin-left: 10px;"
+   <input type="checkbox" class="form-check-input" style="margin-left: 15px;"
      id="Check" (click)="taskCompleted(index)">
 
-    <label style="margin-left: 10px;">  {{x}} </label>
+   <label style="margin-left: 15px;">  {{x}} </label>
 
-    <input type="radio" class="form-check-input" style="margin-left: 10px;">
+    <input type="radio" class="form-check-input" style="margin-left: 15px;">
     
-    <button class="btn btn-primary" style="margin-left: 5px;" 
+    <button class="btn btn-primary" style="margin-left: 15px;" 
     (click) = "deleteTask(index)" > Delete </button>
+</div>
+        
+</div>
+</div>
 
     </div>
 </div>
     </div>
-    <!-- <div class="details" >
+
+
+    <!-- let it be commented
+        <div class="details" >
         <table class="table">
           
             <thead>
@@ -66,22 +75,27 @@
         </table>
         
     </div> 
-     -->
+     till here-->
 <hr>
-    <div class ="container">
+     
+     <div class ="container">
+        <h3> Tasks Are Completed</h3>
         
-     <h3> Tasks Are Completed</h3>
+     
     <div *ngFor="let x of completedTask; let index = index;" >
+        <div class="card">
+            <div class="card-body">
         
     <label>  {{x}} </label>
-    <!-- <button class="btn btn-primary" (click) = "deleteTask(index)"> Delete </button> -->
+    
     </div>
     </div>
-</div>
+ </div>
 
-<div class = "example-box">
-<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-    <!-- <div class="example-box" *ngFor="let task of tasks" cdkDrag>{{tasks}}</div>
-     -->
-    </div>
-  </div>
+ 
+
+
+
+  
+    
+         

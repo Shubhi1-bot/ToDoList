@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import { NgDragDropModule } from 'ng-drag-drop';
-import { AppComponent } from './app.component';
 
+import { AppComponent } from './app.component';
+import { DragulaModule, DragulaService } from 'ng2-dragula';
 import { TodolistComponent } from './todolist/todolist.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -17,7 +17,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     FormsModule,
-    NgDragDropModule.forRoot(),
+    
+    DragulaModule.forRoot(),
     AppRoutingModule,
     BrowserAnimationsModule
   ],
